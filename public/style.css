@@ -1,0 +1,462 @@
+/* ============================================================
+   💎 REGAL CRIMSON THEME — MODERN & LUXURIOUS REDESIGN
+   ============================================================ */
+
+/* === Base & Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Background gradasi lembut untuk kesan mewah */
+    background: linear-gradient(135deg, #fcf8f3, #faeef8);
+    font-family: 'Inter', sans-serif;
+    color: #3e322f; /* Dark charcoal for elegance */
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* === Navbar & Header === */
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    /* Filter blur agar terlihat modern dan floating */
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out; /* Animasi transisi navbar */
+    border-bottom: 1px solid rgba(223, 203, 203, 0.3);
+}
+
+/* Navbar saat di-scroll */
+.navbar.scrolled {
+    padding: 10px 40px;
+    background: #8b1a3d; /* Warna utama (Crimson) saat di-scroll */
+    box-shadow: 0 6px 20px rgba(139, 26, 61, 0.3);
+}
+
+/* Logo Group */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Logo Web di Kiri Atas */
+.logo {
+    font-size: 2rem;
+    color: #8b1a3d; /* Warna Crimson */
+    transition: color 0.3s ease;
+    line-height: 1;
+}
+.navbar.scrolled .logo {
+     color: #bfa373; /* Emas saat di-scroll */
+}
+
+.navbar h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #3e322f;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+.navbar.scrolled h1 {
+    color: #fcf8f3; /* Krem saat di-scroll */
+}
+
+/* Navigasi Links */
+.nav-links a {
+    color: #3e322f;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+.navbar.scrolled .nav-links a {
+    color: #fcf8f3;
+}
+
+/* Active state untuk link navigasi */
+.nav-links a.active {
+    color: #8b1a3d;
+    font-weight: 600;
+}
+.navbar.scrolled .nav-links a.active {
+    color: #bfa373;
+}
+
+/* Animasi garis bawah pada link */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #bfa373; /* Warna Emas */
+    transition: width 0.3s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+    left: 0;
+    background: #8b1a3d;
+}
+.navbar.scrolled .nav-links a:hover::after,
+.navbar.scrolled .nav-links a.active::after {
+    background: #bfa373;
+}
+
+/* === Hamburger Menu (Tombol 3 Garis) === */
+.hamburger {
+    display: none; /* Sembunyikan di desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.bar {
+    height: 3px;
+    width: 100%;
+    background-color: #8b1a3d;
+    border-radius: 10px;
+    transition: all 0.3s ease; /* Animasi garis */
+}
+ .navbar.scrolled .bar {
+    background-color: #fcf8f3;
+}
+
+/* Animasi X saat menu terbuka */
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* === Main Container === */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 50px auto;
+    background: #ffffff;
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e7e0d7;
+    animation: fadeIn 0.8s ease-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Headings === */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    color: #5c1128; /* Darker Crimson */
+    font-weight: 700;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    font-size: 2rem;
+    border-left: 6px solid #bfa373; /* Aksen Emas */
+    padding-left: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* Menyesuaikan margin untuk h2 yang baru agar tidak terlalu dekat dengan konten sebelumnya */
+.h2-top-margin {
+    margin-top: 60px;
+}
+
+/* === Buttons === */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animasi springy */
+    cursor: pointer;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.02); /* Animasi lift */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-crimson {
+    background: linear-gradient(135deg, #8b1a3d, #5c1128);
+    color: white;
+}
+
+.btn-gold-outline {
+    border: 2px solid #bfa373;
+    color: #8b1a3d;
+    background: transparent;
+}
+
+.btn-gold-outline:hover {
+    background: #bfa373;
+    color: white;
+    border-color: #bfa373;
+}
+
+/* === Table === */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 30px;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.table th {
+    background: linear-gradient(90deg, #8b1a3d, #aa335a);
+    color: white;
+    padding: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.table td {
+    background: #ffffff;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #f1e4e8;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.table tr:hover td {
+    background: #fdf0f4; /* Subtle hover color */
+    transform: scale(1.01); /* Animasi slight grow */
+}
+
+.table tr:last-child td {
+    border-bottom: none;
+}
+
+.table img {
+    border-radius: 10px;
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border: 2px solid #f0e6e6;
+    transition: transform 0.4s ease;
+}
+
+.table img:hover {
+    transform: scale(1.1) rotate(1deg); /* Animasi zoom dan rotasi */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === Cards (for seminar preview) === */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.seminar-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid #f0e6e6;
+}
+
+.seminar-card:hover {
+    transform: translateY(-8px); /* Animasi lift yang lebih menonjol */
+    box-shadow: 0 15px 30px rgba(139, 26, 61, 0.15);
+}
+
+.seminar-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.seminar-card:hover img {
+     transform: scale(1.05); /* Animasi zoom pada gambar saat card di-hover */
+}
+
+.seminar-card .card-content {
+    padding: 25px;
+}
+
+.seminar-card h3 {
+    color: #8b1a3d;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.seminar-card p {
+    color: #5d4f4c;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+/* === Alert === */
+.alert {
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: 500;
+    background: #ffe9f0;
+    border: 1px solid #8b1a3d;
+    color: #5c1128;
+    animation: slideIn 0.5s ease-out;
+}
+.alert-margin {
+    margin-bottom: 25px;
+}
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* === Footer === */
+footer {
+    background: #3e322f; /* Dark Charcoal Footer */
+    color: #fcf8f3;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+footer a {
+    color: #bfa373;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+/* === Filters === */
+.filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    border: 2px solid #bfa373;
+    background: #fff;
+    color: #8b1a3d;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #8b1a3d;
+    color: white;
+    border-color: #8b1a3d;
+    box-shadow: 0 4px 12px rgba(139, 26, 61, 0.3);
+}
+
+/* === Responsive (Mobile View) === */
+@media (max-width: 900px) {
+    .navbar {
+        padding: 15px 25px;
+    }
+    .navbar.scrolled {
+        padding: 10px 25px;
+    }
+    .nav-links {
+        /* Sembunyikan dan atur posisi mutlak untuk menu mobile */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #8b1a3d; /* Latar belakang menu */
+        flex-direction: column;
+        padding: 20px 0;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        transform: translateY(-100%); /* Sembunyikan ke atas */
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    }
+
+    .nav-links.open {
+        transform: translateY(0); /* Tampilkan ke bawah */
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .nav-links a {
+        color: #fcf8f3;
+        margin: 10px 40px;
+        display: block; /* Agar setiap link menjadi baris penuh */
+    }
+    .nav-links a::after {
+        background: #bfa373;
+    }
+     .nav-links a:hover::after {
+        background: #fcf8f3;
+    }
+
+    .hamburger {
+        display: flex; /* Tampilkan tombol hamburger */
+    }
+
+    .container {
+        padding: 30px;
+        margin: 30px auto;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}
